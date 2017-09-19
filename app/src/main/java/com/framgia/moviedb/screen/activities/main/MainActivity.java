@@ -1,4 +1,4 @@
-package com.framgia.moviedb.screen.main;
+package com.framgia.moviedb.screen.activities.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

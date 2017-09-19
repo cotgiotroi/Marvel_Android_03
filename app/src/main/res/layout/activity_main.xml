@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.framgia.moviedb.screen.main.MainActivity"
+    tools:context=".screen.activities.main.MainActivity"
     >
 
     <TextView
