@@ -10,4 +10,9 @@ public final class Constant {
 
     public static final int HOME = 0;
     public static final int FAVORITE = 1;
+    public static final int POPULAR = 0;
+    public static final int UP_COMING = 1;
+    public static final int TOP_RATE = 2;
+    public static final int NOW_PLAYING = 3;
+    public static final int GENRES = 4;
 }

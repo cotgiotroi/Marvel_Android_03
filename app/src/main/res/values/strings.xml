@@ -2,4 +2,10 @@
     <string name="app_name">Marvel</string>
     <string name="title_home">Home</string>
     <string name="title_favorite">Favorite</string>
+    <string name="title_popular">Popular</string>
+    <string name="title_coming">Up coming</string>
+    <string name="title_top">Top rate</string>
+    <string name="title_playing">Now playing</string>
+    <string name="title_genres">Genres</string>
+
 </resources>

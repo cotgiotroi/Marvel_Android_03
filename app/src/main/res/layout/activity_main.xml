@@ -50,6 +50,7 @@
                 app:pager="@{(pager)}"
                 app:tabGravity="fill"
                 app:tabMode="fixed"
+                app:tabIndicatorColor="@color/colorPrimaryDark"
                 app:tabSelectedTextColor="@color/colorAccent"
                 app:tabTextColor="@android:color/white"
                 />
