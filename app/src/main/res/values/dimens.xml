@@ -3,4 +3,7 @@
     <dimen name="text_size">20sp</dimen>
     <dimen name="height_tab">50dp</dimen>
     <dimen name="home_tab">40dp</dimen>
+    <dimen name="with_item">175dp</dimen>
+    <dimen name="height_item">250dp</dimen>
+    <dimen name="height_textview">20dp</dimen>
 </resources>

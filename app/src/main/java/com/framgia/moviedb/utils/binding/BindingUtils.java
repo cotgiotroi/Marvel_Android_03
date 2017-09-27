@@ -25,4 +25,5 @@ public class BindingUtils {
     public static void bindViewPagerTabs(TabLayout view, ViewPager pagerView) {
         view.setupWithViewPager(pagerView, true);
     }
+
 }
