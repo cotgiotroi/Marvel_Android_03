@@ -33,17 +33,17 @@ public class HomeViewPager extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (TABS[position]) {
             case POPULAR:
-                return new MovieFragment().getInstance();
+                return new MovieFragment().getInstance(POPULAR);
             case UP_COMING:
-                return new MovieFragment().getInstance();
+                return new MovieFragment().getInstance(UP_COMING);
             case TOP_RATE:
-                return new MovieFragment().getInstance();
+                return new MovieFragment().getInstance(TOP_RATE);
             case NOW_PLAYING:
-                return new MovieFragment().getInstance();
+                return new MovieFragment().getInstance(NOW_PLAYING);
             case GENRES:
                 return new GenresFragment();
             default:
-                return null;
+                return new MovieFragment().getInstance(POPULAR);
         }
     }
 

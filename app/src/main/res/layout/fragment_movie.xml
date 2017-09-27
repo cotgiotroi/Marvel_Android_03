@@ -1,5 +1,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.framgia.moviedb.screen.movie.MovieViewModel"
+            />
+        <import type="com.framgia.moviedb.utils.LayoutManager"/>
+        <import type="android.view.View"/>
+    </data>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -7,10 +16,13 @@
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_textview"
+            android:visibility="@{viewModel.check ? View.GONE : View.VISIBLE}"
             />
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layoutManagerRecycler="@{LayoutManager.grid(viewModel.ITEM_REC)}"
+            app:recyclerAdapter="@{viewModel.adapterMovie}"
             />
     </RelativeLayout>
 
