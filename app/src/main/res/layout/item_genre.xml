@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+   >
+    <data>
+        <variable
+            name="genre"
+            type="com.framgia.moviedb.data.model.Genre"/>
+    </data>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_item_genre"
+        android:text="@{genre.name}"
+        android:textColor="@android:color/white"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/text_size_genre"/>
+
+</layout>

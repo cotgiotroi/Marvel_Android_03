@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import com.framgia.moviedb.R;
 import com.framgia.moviedb.data.model.Movie;
 import com.framgia.moviedb.databinding.ItemMovieBinding;
-
 import java.util.List;
 
 /**
@@ -56,7 +55,9 @@ public class RecyclerAdapterMovie
         }
 
         public void setMovie(Movie movie) {
-            mBinding.setMovie(movie);
+            if (movie != null) {
+                mBinding.setMovie(movie);
+            }
         }
     }
 }

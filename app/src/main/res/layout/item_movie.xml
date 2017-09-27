@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
     <data>
@@ -7,6 +8,7 @@
             name="movie"
             type="com.framgia.moviedb.data.model.Movie"
             />
+
     </data>
     <RelativeLayout
         android:layout_width="@dimen/with_item"
@@ -14,13 +16,18 @@
         >
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="ContentDescription"/>
+            android:layout_height="@dimen/height_item"
+            android:clickable="true"
+            app:imageMovie="@{movie.background}"
+            tools:ignore="ContentDescription"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_textview"
             android:layout_alignParentBottom="true"
+            android:gravity="center"
             android:text="@{movie.title}"
+            android:textColor="@android:color/white"
             />
     </RelativeLayout>
 </layout>
