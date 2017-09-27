@@ -15,4 +15,5 @@ public final class Constant {
     public static final int TOP_RATE = 2;
     public static final int NOW_PLAYING = 3;
     public static final int GENRES = 4;
+    public static final String MOVIE_API = "https://api.themoviedb.org/3/";
 }
