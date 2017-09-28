@@ -5,6 +5,9 @@
         <variable
             name="genre"
             type="com.framgia.moviedb.data.model.Genre"/>
+        <variable
+            name="onItemClick"
+            type="com.framgia.moviedb.utils.OnItemClickListener"/>
     </data>
     <TextView
         android:layout_width="match_parent"
@@ -12,6 +15,7 @@
         android:text="@{genre.name}"
         android:textColor="@android:color/white"
         android:gravity="center_vertical"
+        android:onClick="@{() -> onItemClick.onClick(genre)}"
         android:textSize="@dimen/text_size_genre"/>
 
 </layout>

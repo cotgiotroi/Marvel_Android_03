@@ -1,8 +1,28 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.framgia.moviedb.screen.genres.GenresFragment"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-</FrameLayout>
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.framgia.moviedb.screen.genres.GenresViewModel"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_textview"
+            android:visibility="@{viewModel.load ? View.GONE : View.VISIBLE}"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:recyclerAdapter="@{viewModel.adapterGenre}"
+            app:layoutManager="LinearLayoutManager"/>
+
+    </RelativeLayout>
+
+</layout>

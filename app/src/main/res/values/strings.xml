@@ -7,5 +7,6 @@
     <string name="title_top">Top rate</string>
     <string name="title_playing">Now playing</string>
     <string name="title_genres">Genres</string>
+    <string name="error">Error</string>
 
 </resources>

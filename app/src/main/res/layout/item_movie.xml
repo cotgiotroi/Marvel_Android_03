@@ -8,19 +8,22 @@
             name="movie"
             type="com.framgia.moviedb.data.model.Movie"
             />
+        <variable
+            name="onItemClick"
+            type="com.framgia.moviedb.utils.OnItemClickListener"/>
 
     </data>
     <RelativeLayout
         android:layout_width="@dimen/with_item"
         android:layout_height="@dimen/height_item"
-        >
+      >
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_item"
             android:clickable="true"
             app:imageMovie="@{movie.background}"
             tools:ignore="ContentDescription"
-            />
+            android:onClick="@{() -> onItemClick.onClick(movie)}"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_textview"
