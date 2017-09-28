@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.framgia.moviedb.BR;
 import com.framgia.moviedb.R;
 import com.framgia.moviedb.data.model.Genre;
+import com.framgia.moviedb.screen.moviegenre.MoviesGenreActivity;
 import com.framgia.moviedb.utils.OnItemClickListener;
 import java.util.List;
 
@@ -16,12 +17,11 @@ import java.util.List;
 
 public class GenresViewModel extends BaseObservable
         implements GenresContract.ViewModel, OnItemClickListener<Genre> {
-   
+
     private GenresContract.Presenter mPresenter;
     private RecyclerAdapterGenre mAdapterGenre;
     private Context mContext;
     private boolean mIsLoad;
-
 
     public GenresViewModel(Context context) {
         mContext = context;
@@ -69,6 +69,6 @@ public class GenresViewModel extends BaseObservable
 
     @Override
     public void onClick(Genre genre) {
-
+        mContext.startActivity(MoviesGenreActivity.getInstance(mContext, genre));
     }
 }

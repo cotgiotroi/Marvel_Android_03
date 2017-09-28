@@ -8,5 +8,12 @@
     <string name="title_playing">Now playing</string>
     <string name="title_genres">Genres</string>
     <string name="error">Error</string>
+    <dimen name="height_appbar">200dp</dimen>
+    <dimen name="margin_image">120dp</dimen>
+    <string name="genres">Thể loại :</string>
+    <string name="vote_avg">IMDB :</string>
+    <string name="actor">Diễn viên </string>
+    <string name="company">Nhà xuất bản </string>
+    <string name="overview">Overview :</string>
 
 </resources>

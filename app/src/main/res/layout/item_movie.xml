@@ -10,27 +10,32 @@
             />
         <variable
             name="onItemClick"
-            type="com.framgia.moviedb.utils.OnItemClickListener"/>
+            type="com.framgia.moviedb.utils.OnItemClickListener"
+            />
 
     </data>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="@dimen/with_item"
         android:layout_height="@dimen/height_item"
-      >
+        android:orientation="vertical"
+        >
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_item"
+            android:layout_height="@dimen/height_image"
             android:clickable="true"
+            android:onClick="@{() -> onItemClick.onClick(movie)}"
+            android:scaleType="fitXY"
             app:imageMovie="@{movie.background}"
             tools:ignore="ContentDescription"
-            android:onClick="@{() -> onItemClick.onClick(movie)}"/>
+            />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height_textview"
+            android:layout_height="@dimen/height_name_movie"
             android:layout_alignParentBottom="true"
+            android:background="@color/colorDark"
             android:gravity="center"
             android:text="@{movie.title}"
             android:textColor="@android:color/white"
             />
-    </RelativeLayout>
+    </LinearLayout>
 </layout>
