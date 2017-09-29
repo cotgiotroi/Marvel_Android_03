@@ -14,6 +14,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
         >
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -32,7 +33,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fitsSystemWindows="true"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitXY"
                         app:imageMovie="@{viewModel.movieDetail.posterMovie}"
                         app:layout_collapseMode="parallax"
                         tools:ignore="ContentDescription"
@@ -52,6 +53,8 @@
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onPlay()}"
+                android:src="@drawable/icon_play"
                 app:layout_anchor="@id/appBar"
                 app:layout_anchorGravity="bottom|end"
                 />
@@ -63,13 +66,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_appbar"
-                    android:layout_marginTop="@dimen/margin_image"
+                    android:layout_marginTop="@dimen/height_appbar"
                     android:orientation="horizontal"
                     >
                     <ImageView
-                        android:layout_width="@dimen/with_item"
+                        android:layout_width="@dimen/with_poster"
                         android:layout_height="match_parent"
                         android:background="@color/colorAccent"
+                        android:scaleType="fitXY"
                         app:imageMovie="@{viewModel.movieDetail.backdropMovie}"
                         tools:ignore="ContentDescription"
                         />
@@ -78,7 +82,7 @@
                         android:layout_height="@dimen/text_size"
                         android:layout_marginTop="@dimen/margin_textview"
                         android:text="@{viewModel.movieDetail.nameMovie}"
-                        android:textColor="@android:color/black"
+                        android:textColor="@android:color/white"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -90,10 +94,13 @@
                         android:layout_width="@dimen/width_text"
                         android:layout_height="match_parent"
                         android:text="@string/genres"
+                        android:textColor="@android:color/white"
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:text="@{viewModel.genres}"
+                        android:textColor="@android:color/white"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -105,11 +112,13 @@
                         android:layout_width="@dimen/width_text"
                         android:layout_height="match_parent"
                         android:text="@string/vote_avg"
+                        android:textColor="@android:color/white"
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@{Float.toString(viewModel.movieDetail.voteAvgMovie)}"
+                        android:textColor="@android:color/white"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -121,10 +130,12 @@
                         android:layout_width="@dimen/width_text"
                         android:layout_height="match_parent"
                         android:text="@string/actor"
+                        android:textColor="@android:color/white"
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textColor="@android:color/white"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -136,10 +147,12 @@
                         android:layout_width="@dimen/width_text_company"
                         android:layout_height="match_parent"
                         android:text="@string/company"
+                        android:textColor="@android:color/white"
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textColor="@android:color/white"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -151,11 +164,13 @@
                         android:layout_width="@dimen/width_text"
                         android:layout_height="match_parent"
                         android:text="@string/overview"
+                        android:textColor="@android:color/white"
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@{viewModel.movieDetail.overviewMovie}"
+                        android:textColor="@android:color/white"
                         />
                 </LinearLayout>
             </LinearLayout>

@@ -5,12 +5,13 @@
     <dimen name="height_tab">50dp</dimen>
     <dimen name="home_tab">40dp</dimen>
     <dimen name="with_item">175dp</dimen>
+    <dimen name="with_poster">150dp</dimen>
     <dimen name="height_item">260dp</dimen>
     <dimen name="height_image">205dp</dimen>
     <dimen name="height_textview">20dp</dimen>
     <dimen name="height_name_movie">40dp</dimen>
     <dimen name="height_item_genre">40dp</dimen>
-    <dimen name="margin_textview">80dp</dimen>
+    <dimen name="margin_textview">20dp</dimen>
     <dimen name="width_text">80dp</dimen>
     <dimen name="width_text_company">100dp</dimen>
 </resources>

@@ -4,6 +4,7 @@ import com.framgia.moviedb.data.model.ActorResponse;
 import com.framgia.moviedb.data.model.GenreResponse;
 import com.framgia.moviedb.data.model.MovieDetail;
 import com.framgia.moviedb.data.model.MovieResponse;
+import com.framgia.moviedb.data.model.VideoResponse;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -14,7 +15,8 @@ import retrofit2.http.Query;
  */
 
 public interface MovieApi {
-    String API_KEY = "api_key";
+    static final String API_KEY = "api_key";
+
     @GET("movie/popular")
     Observable<MovieResponse> getPopular(@Query(API_KEY) String api);
 
@@ -31,8 +33,7 @@ public interface MovieApi {
     Observable<GenreResponse> getGenres(@Query(API_KEY) String api);
 
     @GET("genre/{genre_id}/movies")
-    Observable<MovieResponse> getMoviesGenres(@Path("genre_id") int id,
-            @Query(API_KEY) String api);
+    Observable<MovieResponse> getMoviesGenres(@Path("genre_id") int id, @Query(API_KEY) String api);
 
     @GET("movie/{movie_id}")
     Observable<MovieDetail> getMovieDetail(@Path("movie_id") int id, @Query(API_KEY) String api);
@@ -43,4 +44,7 @@ public interface MovieApi {
 
     @GET("movie/{movie_id}/credits")
     Observable<ActorResponse> getActors(@Path("movie_id") int id, @Query(API_KEY) String api);
+
+    @GET("movie/{movie_id}/videos")
+    Observable<VideoResponse> getVideo(@Path("movie_id") int id, @Query(API_KEY) String api);
 }
