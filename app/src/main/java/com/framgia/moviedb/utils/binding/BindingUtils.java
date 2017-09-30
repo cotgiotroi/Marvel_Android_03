@@ -60,6 +60,7 @@ public class BindingUtils {
                         youTubePlayer.cueVideo(key);
                         youTubePlayer.setFullscreen(true);
                         youTubePlayer.play();
+                        youTubePlayer.setShowFullscreenButton(false);
                     }
 
                     @Override

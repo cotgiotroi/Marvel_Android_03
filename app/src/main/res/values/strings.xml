@@ -15,5 +15,6 @@
     <string name="actor">Diễn viên </string>
     <string name="company">Nhà xuất bản </string>
     <string name="overview">Overview :</string>
+    <string name="similar_movie">Phim tương tự</string>
 
 </resources>

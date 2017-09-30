@@ -7,23 +7,40 @@ import android.widget.Toast;
 import com.framgia.moviedb.BR;
 import com.framgia.moviedb.R;
 import com.framgia.moviedb.data.model.Genre;
+import com.framgia.moviedb.data.model.Movie;
 import com.framgia.moviedb.data.model.MovieDetail;
+import com.framgia.moviedb.screen.movie.RecyclerAdapterMovie;
+import com.framgia.moviedb.screen.playvideo.PlayVideoActivity;
+import com.framgia.moviedb.utils.OnItemClickListener;
 import java.util.List;
 
 /**
  * Created by ducviet on 27/09/2017.
  */
 
-public class MovieDetailViewModel extends BaseObservable implements MovieDetailContract.ViewModel {
+public class MovieDetailViewModel extends BaseObservable
+        implements MovieDetailContract.ViewModel, OnItemClickListener<Movie> {
+    public static final int ITEM_REC = 1;
     private MovieDetailContract.Presenter mPresenter;
     private Context mContext;
     private MovieDetail mMovieDetail;
     private int mId;
     private String mGenres;
+    private RecyclerAdapterMovie mAdapterMovie;
 
     public MovieDetailViewModel(Context context, int id) {
         mContext = context;
         mId = id;
+    }
+
+    @Bindable
+    public RecyclerAdapterMovie getAdapterMovie() {
+        return mAdapterMovie;
+    }
+
+    public void setAdapterMovie(RecyclerAdapterMovie adapterMovie) {
+        mAdapterMovie = adapterMovie;
+        notifyPropertyChanged(BR.adapterMovie);
     }
 
     @Bindable
@@ -64,12 +81,24 @@ public class MovieDetailViewModel extends BaseObservable implements MovieDetailC
     }
 
     @Override
+    public void onGetMoviesSimilarSuccess(List<Movie> movies) {
+        mAdapterMovie = new RecyclerAdapterMovie(mContext, movies);
+        mAdapterMovie.setOnClickItemListener(this);
+        setAdapterMovie(mAdapterMovie);
+    }
+
+    @Override
     public void onGetMovieDetailFailure(String message) {
         Toast.makeText(mContext, mContext.getResources().getString(R.string.error) + message,
                 Toast.LENGTH_LONG).show();
     }
 
     public void onPlay() {
+        mContext.startActivity(PlayVideoActivity.getInstance(mContext, mId));
+    }
 
+    @Override
+    public void onClick(Movie movie) {
+        mContext.startActivity(MovieDetailActivity.getInstance(mContext, movie.getId()));
     }
 }

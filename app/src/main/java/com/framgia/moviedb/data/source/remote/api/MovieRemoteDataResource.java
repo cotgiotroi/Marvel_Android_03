@@ -83,4 +83,14 @@ public class MovieRemoteDataResource extends BaseRemoteDataResource implements M
             }
         });
     }
+
+    @Override
+    public Observable<List<Movie>> getMoviesSimilar(int id, String key) {
+        return mMovieApi.getMoviesSimilar(id,key).map(new Function<MovieResponse, List<Movie>>() {
+            @Override
+            public List<Movie> apply(MovieResponse movieResponse) throws Exception {
+                return movieResponse.getMovieList();
+            }
+        });
+    }
 }

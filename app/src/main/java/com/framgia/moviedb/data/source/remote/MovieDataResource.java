@@ -24,4 +24,6 @@ public interface MovieDataResource {
     Observable<MovieDetail> getMovieDetail(int id, String key);
 
     Observable<List<Movie>> getMovieCompany(int id, String key);
+
+    Observable<List<Movie>> getMoviesSimilar(int id, String key);
 }

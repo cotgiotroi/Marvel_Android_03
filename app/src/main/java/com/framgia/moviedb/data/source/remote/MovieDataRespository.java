@@ -51,4 +51,9 @@ public class MovieDataRespository implements MovieDataResource {
     public Observable<List<Movie>> getMovieCompany(int id, String key) {
         return mResource.getMovieCompany(id, key);
     }
+
+    @Override
+    public Observable<List<Movie>> getMoviesSimilar(int id, String key) {
+        return mResource.getMoviesSimilar(id,key);
+    }
 }

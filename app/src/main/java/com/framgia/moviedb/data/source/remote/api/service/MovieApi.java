@@ -47,4 +47,8 @@ public interface MovieApi {
 
     @GET("movie/{movie_id}/videos")
     Observable<VideoResponse> getVideo(@Path("movie_id") int id, @Query(API_KEY) String api);
+
+    @GET("movie/{movie_id}/similar")
+    Observable<MovieResponse> getMoviesSimilar(@Path("movie_id") int id,
+            @Query(API_KEY) String api);
 }

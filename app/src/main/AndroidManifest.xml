@@ -25,6 +25,8 @@
         <activity
             android:name=".screen.moviegenre.MoviesGenreActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".screen.playvideo.PlayVideoActivity"/>
 
     </application>
 
